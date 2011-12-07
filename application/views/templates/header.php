@@ -11,9 +11,9 @@
                 <div class="container-fluid">
                     <a href="<?php echo base_url("home"); ?>" class="brand">An Evil mind in yours head</a>
                     <ul class="nav">
-                        <li class="active"><a href="<?php echo base_url("home"); ?>">Home</a></li>
-                        <li><a href="<?php echo base_url("about"); ?>">About</a></li>
-                        <li><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
+                        <li<?php if($title == "home") echo " class='active'"; ?>><a href="<?php echo base_url("home"); ?>">Home</a></li>
+                        <li<?php if($title == "about") echo " class='active'"; ?>><a href="<?php echo base_url("about"); ?>">About</a></li>
+                        <li<?php if($title == "contact") echo " class='active'"; ?>><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
                     </ul>
                     <p class="pull-right">Logged in as <a href="#">evil username</a></p>
                 </div>
