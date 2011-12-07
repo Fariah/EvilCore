@@ -18,26 +18,4 @@ class Pages extends CI_Controller {
         $this->load->view('templates/footer', $data);
     }
 
-    public function about() {
-        $this->load->helper('html');
-        $this->load->helper('url');
-
-        $data['title'] = 'About';
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('pages/about', $data);
-        $this->load->view('templates/footer', $data);
-    }
-
-    public function contact() {
-        $this->load->helper('html');
-        $this->load->helper('url');
-
-        $data['title'] = 'Contact';
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('pages/contact', $data);
-        $this->load->view('templates/footer', $data);
-    }
-
 }
