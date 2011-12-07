@@ -13,9 +13,11 @@ class Pages extends CI_Controller {
 
         $data['title'] = $page;
 
-        $this->load->view('templates/header', $data);
+        $this->load->view('header', $data);
+        $this->load->view('login', $data);
+        $this->load->view('register', $data);
         $this->load->view('pages/' . $page, $data);
-        $this->load->view('templates/footer', $data);
+        $this->load->view('footer', $data);
     }
 
 }

@@ -3,7 +3,23 @@
         <title>Evil Story - <?php echo $title; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery1.4.2.min.js"></script>
+        <script src="js/bootstrap-modal.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var login = $('#login');
+                var register = $('#register');
+                var modal_login = $('#modal-login');
+                var modal_register = $('#modal-register');
 
+                login.click(function () {
+                    modal_register.modal('hide');
+                });
+                register.click(function () {
+                    modal_login.modal('hide');
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="topbar">
@@ -12,10 +28,11 @@
                     <a href="<?php echo base_url("home"); ?>" class="brand">An Evil mind in yours head</a>
                     <ul class="nav">
                         <li<?php if($title == "home") echo " class='active'"; ?>><a href="<?php echo base_url("home"); ?>">Home</a></li>
+                        <li<?php if($title == "news") echo " class='active'"; ?>><a href="<?php echo base_url("news"); ?>">News</a></li>
                         <li<?php if($title == "about") echo " class='active'"; ?>><a href="<?php echo base_url("about"); ?>">About</a></li>
                         <li<?php if($title == "contact") echo " class='active'"; ?>><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
                     </ul>
-                    <p class="pull-right"><a href="#">Login</a> <a href="#">Register</a></p>
+                    <p class="pull-right" data-controls-modal="modal-login"><a id="login" href="#">Login</a> <a id="register" href="#" data-controls-modal="modal-register">Register</a></p>
                 </div>
             </div>
         </div>
