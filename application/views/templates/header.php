@@ -15,7 +15,7 @@
                         <li<?php if($title == "about") echo " class='active'"; ?>><a href="<?php echo base_url("about"); ?>">About</a></li>
                         <li<?php if($title == "contact") echo " class='active'"; ?>><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
                     </ul>
-                    <p class="pull-right">Logged in as <a href="#">evil username</a></p>
+                    <p class="pull-right"><a href="#">Login</a> <a href="#">Register</a></p>
                 </div>
             </div>
         </div>
