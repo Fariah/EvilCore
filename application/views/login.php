@@ -4,25 +4,25 @@
         <h3>Evil login form</h3>
     </div>
     <div class="modal-body">
-        <form>
+        <?php echo form_open('loggin_evil'); ?>
             <fieldset>
                 <div class="clearfix">
                     <label for="xlInput">Evil Login</label>
                     <div class="input">
-                        <input type="text" name="" id="" class="span4">
+                        <input type="text" name="username" id="" class="span4">
                     </div>
                 </div>
                 <div class="clearfix">
                     <label for="xlInput">Evil Password</label>
                     <div class="input">
-                        <input type="password" name="" id="" class="span4">
+                        <input type="password" name="password" id="" class="span4">
                     </div>
                 </div>
             </fieldset>
-        </form>
     </div>
     <div class="modal-footer">
-        <a class="btn primary" href="#">Login to evil</a>
-        <a class="btn secondary" href="#">Forgot my evil</a>
+        <input class="btn primary" type="submit" value="Login to evil" />
+<!--        <a class="btn secondary" href="#">Forgot my evil</a>-->
+    </form>
     </div>
 </div>

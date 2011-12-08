@@ -38,6 +38,10 @@
 |
 */
 
+//$route['auth'] = 'auth/index';
+$route['loggin_evil'] = 'auth/login';
+$route['create_evil'] = 'auth/create_user';
+$route['logout'] = 'auth/logout';
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 
