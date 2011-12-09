@@ -2,9 +2,9 @@
     <head>
         <title>Evil Story - <?php echo $title; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <script src="js/jquery1.4.2.min.js"></script>
-        <script src="js/bootstrap-modal.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="/js/jquery1.4.2.min.js"></script>
+        <script src="/js/bootstrap-modal.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 var login = $('#login');
@@ -28,7 +28,7 @@
                     <a href="<?php echo base_url("home"); ?>" class="brand">An Evil mind in yours head</a>
                     <ul class="nav">
                         <li<?php if($title == "home") echo " class='active'"; ?>><a href="<?php echo base_url("home"); ?>">Home</a></li>
-                        <li<?php if($title == "news") echo " class='active'"; ?>><a href="<?php echo base_url("news"); ?>">News</a></li>
+                        <li<?php if($title == "News") echo " class='active'"; ?>><a href="<?php echo base_url("evil_news"); ?>">News</a></li>
                         <li<?php if($title == "about") echo " class='active'"; ?>><a href="<?php echo base_url("about"); ?>">About</a></li>
                         <li<?php if($title == "contact") echo " class='active'"; ?>><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
                     </ul>

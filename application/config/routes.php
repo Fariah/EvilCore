@@ -38,7 +38,8 @@
 |
 */
 
-//$route['auth'] = 'auth/index';
+$route['evil_news'] = 'news/index';
+$route['evil_news/(:num)'] = 'news/view/$1';
 $route['loggin_evil'] = 'auth/login';
 $route['create_evil'] = 'auth/create_user';
 $route['logout'] = 'auth/logout';
