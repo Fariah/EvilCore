@@ -18,7 +18,7 @@ class News extends CI_Controller {
 
         if ($this->ion_auth->is_admin()){
             $data = array(
-                'title' => 'News',
+                'title' => 'backend',
                 'logged_in' => $this->ion_auth->logged_in(),
                 'evil_name' => $this->ion_auth->get_user()->username,
                 'news' => $this->news_mdl->get_news(),

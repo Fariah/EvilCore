@@ -16,7 +16,7 @@ class Settings extends CI_Controller {
 
         if ($this->ion_auth->is_admin()){
             $data = array(
-                'title' => 'Backend Users',
+                'title' => 'backend',
                 'logged_in' => $this->ion_auth->logged_in(),
                 'evil_name' => $this->ion_auth->get_user()->username,
                 'admin' => $this->ion_auth->is_admin(),

@@ -38,11 +38,14 @@
                         <li<?php if($title == "News") echo " class='active'"; ?>><a href="<?php echo base_url("evil_news"); ?>">News</a></li>
                         <li<?php if($title == "about") echo " class='active'"; ?>><a href="<?php echo base_url("about"); ?>">About</a></li>
                         <li<?php if($title == "contact") echo " class='active'"; ?>><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
+                        <?php if($admin): ?>
+                        <li<?php if($title == "backend") echo " class='active'"; ?>><a href="<?php echo base_url("admin/users"); ?>">Админка</a></li>
+                        <?php endif; ?>
                     </ul>
                     <?php if(!$logged_in): ?>
                         <p class="pull-right" data-controls-modal="modal-login"><a id="login" href="#">Login</a> <a id="register" href="#" data-controls-modal="modal-register">Register</a></p>
                     <?php else: ?>
-                        <p class="pull-right"><?php if($admin): ?><a id="" href="<?php echo base_url("admin"); ?>">CMS</a> <?php endif; ?>Greeting Evil <a id="" href="#"><?php echo $evil_name; ?></a> maybe <a id="" href="<?php echo base_url("logout"); ?>">Logout</a></p>
+                        <p class="pull-right">Greeting Evil <a id="" href="#"><?php echo $evil_name; ?></a> maybe <a id="" href="<?php echo base_url("logout"); ?>">Logout</a></p>
                     <?php endif; ?>    
                 </div>
             </div>
