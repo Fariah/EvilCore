@@ -19,7 +19,8 @@ class News extends CI_Controller {
         $data = array(
             'title' => 'News',
             'logged_in' => $this->ion_auth->logged_in(),
-            'news' => $this->news_mdl->get_news()
+            'news' => $this->news_mdl->get_news(),
+            'admin' => $this->ion_auth->is_admin()
         );
 
         if ($this->ion_auth->logged_in())
@@ -42,7 +43,8 @@ class News extends CI_Controller {
         $data = array(
             'title' => 'News',
             'logged_in' => $this->ion_auth->logged_in(),
-            'news' => $this->news_mdl->get_news($id)
+            'news' => $this->news_mdl->get_news($id),
+            'admin' => $this->ion_auth->is_admin()
         );
 
         if ($this->ion_auth->logged_in())

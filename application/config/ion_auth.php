@@ -3,12 +3,12 @@
 * Name:  Ion Auth Config
 * 
 * Author: Ben Edmunds
-* 		  ben.edmunds@gmail.com
+* 	  ben.edmunds@gmail.com
 *         @benedmunds
 *          
 * Added Awesomeness: Phil Sturgeon
 * 
-* Location: http://github.com/benedmunds/ion_auth/
+* Location: http://github.com/benedmunds/CodeIgniter-Ion-Auth/
 *          
 * Created:  10.01.2009 
 * 
@@ -20,9 +20,9 @@
 	/**
 	 * Tables.
 	 **/
-	$config['tables']['groups']          = 'groups';
-	$config['tables']['users']           = 'users';
-	$config['tables']['users_groups']    = 'users_groups';
+	$config['tables']['groups']  = 'groups';
+	$config['tables']['users']   = 'users';
+	$config['tables']['meta']    = 'meta';
 	
 	/**
 	 * Site Title, example.com
@@ -45,23 +45,27 @@
 	$config['admin_group']         = 'admin';
 	 
 	/**
-	 * Users table column and Group table column you want to join WITH.
+	 * Meta table column you want to join WITH.
 	 * Joins from users.id
-	 * Joins from groups.id
 	 **/
-	$config['join']['users']       = 'user_id';
-	$config['join']['groups']      = 'group_id';
+	$config['join']                = 'user_id';
+	
+	/**
+	 * Columns in your meta table,
+	 * id not required.
+	 **/
+	$config['columns']             = array('first_name', 'last_name', 'company', 'phone');
 	
 	/**
 	 * A database column which is used to
 	 * login with.
 	 **/
-	$config['identity']            = 'username';
+	$config['identity']            = 'email';
 		 
 	/**
 	 * Minimum Required Length of Password
 	 **/
-	$config['min_password_length'] = 6;
+	$config['min_password_length'] = 5;
 	
 	/**
 	 * Maximum Allowed Length of Password
@@ -76,7 +80,7 @@
 	/**
 	 * Allow users to be remembered and enable auto-login
 	 **/
-	$config['remember_users']      = false;
+	$config['remember_users']      = true;
 	
 	/**
 	 * How long to remember the user (seconds)
@@ -87,7 +91,13 @@
 	 * Extend the users cookies everytime they auto-login
 	 **/
 	$config['user_extend_on_login'] = false;
-
+	
+	/**
+	 * Type of email to send (HTML or text)
+	 * Default : html
+	 **/
+	$config['email_type'] = 'html';
+	
 	/**
 	 * Folder where email templates are stored.
      * Default : auth/
@@ -114,6 +124,8 @@
 	
 	/**
 	 * Salt Length
+	 * Salt length needs to be at least as long 
+	 * as the minimum password length.
 	 **/
 	$config['salt_length'] = 10;
 

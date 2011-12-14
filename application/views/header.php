@@ -5,18 +5,24 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <script src="/js/jquery1.4.2.min.js"></script>
         <script src="/js/bootstrap-modal.js"></script>
+        <script src="/js/bootstrap-tabs.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 var login = $('#login');
                 var register = $('#register');
                 var modal_login = $('#modal-login');
                 var modal_register = $('#modal-register');
-
+                var user_delete = $('.user_delete');
+                
                 login.click(function () {
                     modal_register.modal('hide');
                 });
                 register.click(function () {
                     modal_login.modal('hide');
+                });
+                user_delete.click(function(){
+                    var answer = confirm('Delete user?');
+                    return answer; // answer is a boolean
                 });
             });
         </script>
@@ -35,7 +41,7 @@
                     <?php if(!$logged_in): ?>
                         <p class="pull-right" data-controls-modal="modal-login"><a id="login" href="#">Login</a> <a id="register" href="#" data-controls-modal="modal-register">Register</a></p>
                     <?php else: ?>
-                        <p class="pull-right">Greeting Evil <a id="" href="#"><?php echo $evil_name; ?></a> maybe <a id="" href="<?php echo base_url("logout"); ?>">Logout</a></p>
+                        <p class="pull-right"><?php if($admin): ?><a id="" href="<?php echo base_url("admin"); ?>">CMS</a> <?php endif; ?>Greeting Evil <a id="" href="#"><?php echo $evil_name; ?></a> maybe <a id="" href="<?php echo base_url("logout"); ?>">Logout</a></p>
                     <?php endif; ?>    
                 </div>
             </div>

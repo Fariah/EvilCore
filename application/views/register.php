@@ -7,16 +7,22 @@
         <?php echo form_open('create_evil'); ?>
             <fieldset>
                 <div class="clearfix">
-                    <label for="xlInput">Evil Username</label>
+                    <label for="xlInput">Evil Name</label>
                     <div class="input">
-                        <input type="text" name="username" value="<?php echo set_value('username'); ?>" id="" class="span4">
-                        <span class="help-block">It will be your login</span>
+                        <input type="text" name="first_name" value="<?php echo set_value('first_name'); ?>" id="" class="span4">
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <label for="xlInput">Evil Last Name</label>
+                    <div class="input">
+                        <input type="text" name="last_name" value="<?php echo set_value('last_name'); ?>" id="" class="span4">
                     </div>
                 </div>
                 <div class="clearfix">
                     <label for="xlInput">Evil Email</label>
                     <div class="input">
                         <input type="text" name="email" value="<?php echo set_value('email'); ?>" id="" class="span4">
+                        <span class="help-block">It will be your login</span>
                     </div>
                 </div>
                 <div class="clearfix">
@@ -38,5 +44,5 @@
 <!--        <a class="btn primary" href="#">Register to evil</a>-->
 <!--        <a class="btn secondary" href="#">I`m not evil</a>-->
     </div>
-    </form>
+    <?php echo form_close();?>
 </div>

@@ -38,6 +38,9 @@
 |
 */
 
+$route['users/delete/(:any)'] = 'admin/users/delete/$1';
+$route['admin/(:any)'] = 'admin/$1/index';
+$route['admin'] = 'admin/menu/index';
 $route['evil_news'] = 'news/index';
 $route['evil_news/(:num)'] = 'news/view/$1';
 $route['loggin_evil'] = 'auth/login';
