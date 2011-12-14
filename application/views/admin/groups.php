@@ -1,12 +1,12 @@
 <div class="well">
-    <h5>Users</h5>
+    <h5>Groups</h5>
     <table class="bordered-table zebra-striped">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Actions</th>
+                <th id="th_actions">Actions</th>
             </tr>
         </thead>
         <tbody>

@@ -7,7 +7,7 @@
                 <th>Username</th>
                 <th>Email</th>
                 <th>Group</th>
-                <th>Actions</th>
+                <th id="th_actions">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
                     <td><?php echo $user->email; ?></td>
                     <td><?php echo $user->group; ?></td>
                     <td>
-                        <a class="user_delete" href="<?php echo base_url("users/delete/$user->id"); ?>">
+                        <a class="item_delete" href="<?php echo base_url("users/delete/$user->id"); ?>">
                             <button class="btn small danger">Delete</button>
                         </a>
                     </td>

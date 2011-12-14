@@ -3,6 +3,7 @@
         <title>Evil Story - <?php echo $title; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/css/main.css" rel="stylesheet" type="text/css" />
         <script src="/js/jquery1.4.2.min.js"></script>
         <script src="/js/bootstrap-modal.js"></script>
         <script src="/js/bootstrap-tabs.js"></script>
@@ -12,7 +13,7 @@
                 var register = $('#register');
                 var modal_login = $('#modal-login');
                 var modal_register = $('#modal-register');
-                var user_delete = $('.user_delete');
+                var item_delete = $('.item_delete');
                 
                 login.click(function () {
                     modal_register.modal('hide');
@@ -20,8 +21,8 @@
                 register.click(function () {
                     modal_login.modal('hide');
                 });
-                user_delete.click(function(){
-                    var answer = confirm('Delete user?');
+                item_delete.click(function(){
+                    var answer = confirm('Это окончательное решение?');
                     return answer; // answer is a boolean
                 });
             });
