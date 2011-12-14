@@ -6,8 +6,8 @@ DROP TABLE IF EXISTS `groups`;
 
 CREATE TABLE `groups` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  `description` varchar(100) NOT NULL,
+  `name` varchar(20) COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(100) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -30,10 +30,10 @@ DROP TABLE IF EXISTS `meta`;
 CREATE TABLE `meta` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` mediumint(8) unsigned DEFAULT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
+  `first_name` varchar(50) COLLATE utf8_general_ci DEFAULT NULL,
+  `last_name` varchar(50) COLLATE utf8_general_ci DEFAULT NULL,
+  `company` varchar(100) COLLATE utf8_general_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -54,14 +54,14 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `group_id` mediumint(8) unsigned NOT NULL,
-  `ip_address` char(16) NOT NULL,
-  `username` varchar(15) NOT NULL,
-  `password` varchar(40) NOT NULL,
-  `salt` varchar(40) DEFAULT NULL,
-  `email` varchar(254) NOT NULL,
-  `activation_code` varchar(40) DEFAULT NULL,
-  `forgotten_password_code` varchar(40) DEFAULT NULL,
-  `remember_code` varchar(40) DEFAULT NULL,
+  `ip_address` char(16) COLLATE utf8_general_ci NOT NULL,
+  `username` varchar(15) COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(40) COLLATE utf8_general_ci NOT NULL,
+  `salt` varchar(40) COLLATE utf8_general_ci DEFAULT NULL,
+  `email` varchar(254) COLLATE utf8_general_ci NOT NULL,
+  `activation_code` varchar(40) COLLATE utf8_general_ci DEFAULT NULL,
+  `forgotten_password_code` varchar(40) COLLATE utf8_general_ci DEFAULT NULL,
+  `remember_code` varchar(40) COLLATE utf8_general_ci DEFAULT NULL,
   `created_on` int(11) unsigned NOT NULL,
   `last_login` int(11) unsigned DEFAULT NULL,
   `active` tinyint(1) unsigned DEFAULT NULL,

@@ -7,8 +7,8 @@ DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
+  `title` varchar(255) COLLATE utf8_general_ci NOT NULL,
+  `description` text COLLATE utf8_general_ci NOT NULL,
   `user_id` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 );
