@@ -3,3 +3,4 @@
 /.git-rewrite/
 /application/config/database.php
 /application/config/config.php
+/application/userguide/

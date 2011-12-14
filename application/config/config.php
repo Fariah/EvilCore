@@ -15,6 +15,7 @@
 |
 */
 $config['base_url']	= 'http://evil_story.local/';
+//$config['base_url']	= 'http://evilmind.netne.net/';
 
 /*
 |--------------------------------------------------------------------------
