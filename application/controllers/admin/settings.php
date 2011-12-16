@@ -28,6 +28,16 @@ class Settings extends CI_Controller {
             $this->load->view('admin/settings', $data);
             $this->load->view('footer', $data);
         }
+        else {
+            $data = array(
+                'title' => 'Error',
+                'logged_in' => $this->ion_auth->logged_in(),
+                'admin' => $this->ion_auth->is_admin()
+            );
+            $this->load->view('header', $data);
+            $this->load->view('admin_error', $data);
+            $this->load->view('footer', $data);
+        }
 
     }
 

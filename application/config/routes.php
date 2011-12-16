@@ -38,6 +38,8 @@
 |
 */
 
+$route['admin/save_news/(:num)'] = 'admin/news/save/$1';
+$route['admin/news/edit/(:num)'] = 'admin/news/edit/$1';
 $route['users/delete/(:any)'] = 'admin/users/delete/$1';
 $route['admin/(:any)'] = 'admin/$1/index';
 $route['admin'] = 'admin/menu/index';
