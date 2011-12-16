@@ -36,18 +36,13 @@ class News_mdl extends CI_Model {
         return $this->db->update('news', $this, array('id' => $id));
     }
 
-    public function set_news() {
-        $this->load->helper('url');
+    public function create_news($data) {
+        $this->date = $data['date'];
+        $this->title = $data['title'];
+        $this->description = $data['description'];
+        $this->user_id = $this->session->userdata('user_id');
 
-        $slug = url_title($this->input->post('title'), 'dash', TRUE);
-
-        $data = array(
-            'title' => $this->input->post('title'),
-            'slug' => $slug,
-            'text' => $this->input->post('text')
-        );
-
-        return $this->db->insert('news', $data);
+        return $this->db->insert('news', $this);
     }
 
 }

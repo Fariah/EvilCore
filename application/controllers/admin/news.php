@@ -29,8 +29,7 @@ class News extends CI_Controller {
             $this->load->view('admin/menu', $data);
             $this->load->view('admin/news', $data);
             $this->load->view('footer', $data);
-        }
-        else {
+        } else {
             $data = array(
                 'title' => 'Error',
                 'logged_in' => $this->ion_auth->logged_in(),
@@ -60,8 +59,7 @@ class News extends CI_Controller {
             $this->load->view('admin/menu', $data);
             $this->load->view('admin/edit_news', $data);
             $this->load->view('footer', $data);
-        }
-        else {
+        } else {
             $data = array(
                 'title' => 'Error',
                 'logged_in' => $this->ion_auth->logged_in(),
@@ -89,8 +87,7 @@ class News extends CI_Controller {
             $this->news_mdl->save_news($id, $data_set);
 
             redirect('admin/news/', 'refresh');
-        }
-        else {
+        } else {
             $data = array(
                 'title' => 'Error',
                 'logged_in' => $this->ion_auth->logged_in(),
@@ -102,23 +99,58 @@ class News extends CI_Controller {
         }
     }
 
-    public function view($id) {
+    public function create() {
 
-        $data = array(
-            'title' => 'News',
-            'logged_in' => $this->ion_auth->logged_in(),
-            'news' => $this->news_mdl->get_news($id),
-            'admin' => $this->ion_auth->is_admin()
-        );
+        if ($this->ion_auth->is_admin()) {
+            $data = array(
+                'title' => 'backend',
+                'logged_in' => $this->ion_auth->logged_in(),
+                'evil_name' => $this->ion_auth->get_user()->username,
+                'menu' => array('users', 'groups', 'news', 'settings'),
+                'admin' => $this->ion_auth->is_admin(),
+                'date' => date("Y-m-j")
+            );
 
-        if ($this->ion_auth->logged_in())
-            $data['evil_name'] = $this->ion_auth->get_user()->username;
+            $this->load->view('header', $data);
+            $this->load->view('admin/menu', $data);
+            $this->load->view('admin/form_news', $data);
+            $this->load->view('footer', $data);
+        } else {
+            $data = array(
+                'title' => 'Error',
+                'logged_in' => $this->ion_auth->logged_in(),
+                'admin' => $this->ion_auth->is_admin()
+            );
+            $this->load->view('header', $data);
+            $this->load->view('admin_error', $data);
+            $this->load->view('footer', $data);
+        }
+    }
+        public function set_news() {
 
-        $this->load->view('header', $data);
-        $this->load->view('login', $data);
-        $this->load->view('register', $data);
-        $this->load->view('news/view', $data);
-        $this->load->view('footer', $data);
+        if ($this->ion_auth->is_admin()) {
+            $date = date("Y-m-j");
+            $title = $this->input->post('news_title');
+            $description = $this->input->post('news_textarea');
+
+            $data_set = array(
+                'date' => $date,
+                'title' => $title,
+                'description' => $description);
+
+            $this->news_mdl->create_news($data_set);
+
+            redirect('admin/news/', 'refresh');
+        } else {
+            $data = array(
+                'title' => 'Error',
+                'logged_in' => $this->ion_auth->logged_in(),
+                'admin' => $this->ion_auth->is_admin()
+            );
+            $this->load->view('header', $data);
+            $this->load->view('admin_error', $data);
+            $this->load->view('footer', $data);
+        }
     }
 
 }

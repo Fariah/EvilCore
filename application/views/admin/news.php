@@ -32,4 +32,7 @@
             <?php endforeach ?>
         </tbody>
     </table>
+    <a class="news_create" href="<?php echo base_url("admin/news/create"); ?>">
+        <button class="btn medium">Создать</button>
+    </a>
 </div>
