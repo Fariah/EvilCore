@@ -1,36 +1,21 @@
 <div class="well">
     <h6>An Evil behind of you...</h6>
-    <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text
-        ever since the 1500s, when an unknown printer took a galley of type
-        and scrambled it to make a type specimen book. It has survived not
-        only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and
-        more recently with desktop publishing software like Aldus PageMaker
-        including versions of Lorem Ipsum.
-    </p>
-    <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text
-        ever since the 1500s, when an unknown printer took a galley of type
-        and scrambled it to make a type specimen book. It has survived not
-        only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and
-        more recently with desktop publishing software like Aldus PageMaker
-        including versions of Lorem Ipsum.
-    </p>
-    <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text
-        ever since the 1500s, when an unknown printer took a galley of type
-        and scrambled it to make a type specimen book. It has survived not
-        only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and
-        more recently with desktop publishing software like Aldus PageMaker
-        including versions of Lorem Ipsum.
-    </p>
+    <div id='coin-slider'>
+	<a href="img/evil_1.jpg" target="_blank">
+		<img src='img/evil_1.jpg' >
+		<span>Злая картинка раз</span>
+	</a>
+        <a href="img/evil_2.jpg" target="_blank">
+		<img src='img/evil_2.jpg' >
+		<span>Злая картинка два</span>
+	</a>
+        <a href="img/evil_3.jpg" target="_blank">
+		<img src='img/evil_3.jpg' >
+		<span>Злая картинка три</span>
+	</a>
+        <a href="img/evil_3.jpg" target="_blank">
+		<img src='img/evil_4.jpg' >
+		<span>Злая картинка четыре</span>
+	</a>
+</div>
 </div>

@@ -2,11 +2,15 @@
     <head>
         <title>Evil Story - <?php echo $title; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
         <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/css/main.css" rel="stylesheet" type="text/css" />
+        <link href="/css/coin-slider-styles.css" rel="stylesheet" type="text/css" />
+
         <script src="/js/jquery1.4.2.min.js"></script>
         <script src="/js/bootstrap-modal.js"></script>
-        <script src="/js/bootstrap-tabs.js"></script>
+        <script src="/js/coin-slider/coin-slider.min.js"></script>
+
         <script type="text/javascript">
             $(document).ready(function () {
                 var login = $('#login');
@@ -24,6 +28,20 @@
                 item_delete.click(function(){
                     var answer = confirm('Это окончательное решение?');
                     return answer; // answer is a boolean
+                });
+                $('#coin-slider').coinslider({
+                    width: 400, // width of slider panel
+                    height: 300, // height of slider panel
+                    spw: 10, // squares per width
+                    sph: 8, // squares per height
+                    delay: 5000, // delay between images in ms
+                    sDelay: 20, // delay beetwen squares in ms
+                    opacity: 0.7, // opacity of title and navigation
+                    titleSpeed: 500, // speed of title appereance in ms
+                    effect: '', // random, swirl, rain, straight
+                    navigation: true, // prev next and buttons
+                    links : false, // show images as links
+                    hoverPause: true // pause on hover
                 });
             });
         </script>
