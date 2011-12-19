@@ -17,6 +17,7 @@ class News_mdl extends CI_Model {
 
     public function get_news($id = FALSE) {
         if ($id === FALSE) {
+            $this->db->order_by('date', 'ASC');
             $query = $this->db->get('news');
             return $query->result_array();
         }
