@@ -1,3 +1,8 @@
+<?php if(isset ($error)): ?>
+    <div class="well">
+        <span class="label important"><?php echo $error; ?></span>
+    </div>
+<?php endif; ?>
 <div class="well">
     <h5>News</h5>
     <table class="bordered-table zebra-striped">

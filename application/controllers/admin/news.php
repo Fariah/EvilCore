@@ -144,12 +144,17 @@ class News extends CI_Controller {
             redirect('admin/news/', 'refresh');
         } else {
             $data = array(
-                'title' => 'Error',
-                'logged_in' => $this->ion_auth->logged_in(),
-                'admin' => $this->ion_auth->is_admin()
-            );
+                    'title' => 'backend',
+                    'logged_in' => $this->ion_auth->logged_in(),
+                    'evil_name' => $this->ion_auth->get_user()->username,
+                    'news' => $this->news_mdl->get_news(),
+                    'menu' => array('users', 'groups', 'news', 'settings'),
+                    'admin' => $this->ion_auth->is_admin(),
+                    'error' => 'Возникла непредвиденная ошибка при создании новости'
+                );
             $this->load->view('header', $data);
-            $this->load->view('admin_error', $data);
+            $this->load->view('admin/menu', $data);
+            $this->load->view('admin/news', $data);
             $this->load->view('footer', $data);
         }
     }
@@ -160,8 +165,19 @@ class News extends CI_Controller {
             $this->news_mdl->delete_news($id);
             redirect('admin/news/', 'refresh');
         } else {
-            $data = array('error' => 'Возникла непредвиденная ошибка при удалении новости');
-            redirect('admin/news/', 'refresh');
+            $data = array(
+                    'title' => 'backend',
+                    'logged_in' => $this->ion_auth->logged_in(),
+                    'evil_name' => $this->ion_auth->get_user()->username,
+                    'news' => $this->news_mdl->get_news(),
+                    'menu' => array('users', 'groups', 'news', 'settings'),
+                    'admin' => $this->ion_auth->is_admin(),
+                    'error' => 'Возникла непредвиденная ошибка при удалении новости'
+                );
+            $this->load->view('header', $data);
+            $this->load->view('admin/menu', $data);
+            $this->load->view('admin/news', $data);
+            $this->load->view('footer', $data);
         }
     }
 
