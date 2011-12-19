@@ -1,7 +1,7 @@
 <?php
 
 class News_mdl extends CI_Model {
-    
+
     public $id;
     public $date;
     public $title;
@@ -44,6 +44,11 @@ class News_mdl extends CI_Model {
         $this->user_id = $this->session->userdata('user_id');
 
         return $this->db->insert('news', $this);
+    }
+
+    public function delete_news($id) {
+
+        return $this->db->delete('news', array('id' => $id));;
     }
 
 }

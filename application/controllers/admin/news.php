@@ -126,7 +126,8 @@ class News extends CI_Controller {
             $this->load->view('footer', $data);
         }
     }
-        public function set_news() {
+
+    public function set_news() {
 
         if ($this->ion_auth->is_admin()) {
             $date = date("Y-m-j");
@@ -150,6 +151,17 @@ class News extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('admin_error', $data);
             $this->load->view('footer', $data);
+        }
+    }
+
+    public function delete($id) {
+
+        if ($this->ion_auth->is_admin()) {
+            $this->news_mdl->delete_news($id);
+            redirect('admin/news/', 'refresh');
+        } else {
+            $data = array('error' => 'Возникла непредвиденная ошибка при удалении новости');
+            redirect('admin/news/', 'refresh');
         }
     }
 

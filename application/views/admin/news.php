@@ -18,7 +18,7 @@
                         </a>
                     </td>
                     <td>
-                        <a class="item_delete" href="<?php echo base_url("admin/news#"); ?>">
+                        <a class="item_delete" href="<?php echo base_url("admin/news/delete/".$one_news['id']); ?>">
                             <button class="btn small danger">Delete</button>
                         </a>
                         <a class="news_edit" href="<?php echo base_url("admin/news/edit/".$one_news['id']); ?>">
