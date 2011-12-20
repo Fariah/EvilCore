@@ -17,7 +17,7 @@
         <div class="clearfix">
             <label for="textarea">Текст</label>
             <div class="input">
-                <textarea rows="12" name="news_textarea" id="" class="xxlarge"><?php echo $news['description']; ?></textarea>
+                <textarea rows="12" name="news_textarea" id="news_textarea" class="xxlarge"><?php echo $news['description']; ?></textarea>
             </div>
         </div>
         <div class="clearfix">

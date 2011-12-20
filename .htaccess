@@ -5,6 +5,7 @@ RewriteBase /
 RewriteRule ^img/(.*\.png|.*\.jpg)$ application/web/images/$1 [L]
 RewriteRule ^css/(.*\.css)$ application/web/css/$1 [L]
 RewriteRule ^js/(.*\.js)$ application/web/js/$1 [L]
+RewriteRule ^redactor/(.*)$ application/web/redactor/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d 

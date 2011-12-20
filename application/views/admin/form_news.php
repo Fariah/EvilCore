@@ -17,7 +17,7 @@
         <div class="clearfix">
             <label for="textarea">Текст</label>
             <div class="input">
-                <textarea rows="12" name="news_textarea" id="" class="xxlarge"></textarea>
+                <textarea rows="12" name="news_textarea" id="news_textarea" class="xxlarge"></textarea>
             </div>
         </div>
         <div class="clearfix">

@@ -6,10 +6,12 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/css/main.css" rel="stylesheet" type="text/css" />
         <link href="/css/coin-slider-styles.css" rel="stylesheet" type="text/css" />
+        <link href="/redactor/css/redactor.css" rel="stylesheet" type="text/css" />
 
         <script src="/js/jquery1.4.2.min.js"></script>
         <script src="/js/bootstrap-modal.js"></script>
         <script src="/js/coin-slider/coin-slider.min.js"></script>
+        <script src="/redactor/redactor.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -43,6 +45,7 @@
                     links : false, // show images as links
                     hoverPause: true // pause on hover
                 });
+                $('#news_textarea').redactor({ lang: 'ru' });
             });
         </script>
     </head>
