@@ -37,6 +37,14 @@
                         <input type="password" name="password_confirm" value="<?php echo set_value('password_confirm'); ?>" id="" class="span4">
                     </div>
                 </div>
+                <div class="clearfix">
+                    <label for="xlInput">Evil Captcha</label>
+                    <div class="input">
+                        <img id="ajax_image" src="<?php echo site_url('captha_img/'.rand(0,255)); ?>">
+                        <img id="ajax_reload" alt="Обновить капчу" src="img/refcaptcha.gif"><br>
+                        <input type="text" name="evil_captcha" value="" id="" class="span2" autocomplete="off">
+                    </div>
+                </div>
             </fieldset>
     </div>
     <div class="modal-footer">

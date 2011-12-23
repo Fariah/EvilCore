@@ -2,17 +2,29 @@
 
 class Pages extends CI_Controller {
 
-    public function view($page = 'home') {
-        $this->load->helper(array('form', 'url', 'html'));
-
-        $this->load->library(array('form_validation', 'ion_auth', 'session'));
+    function __construct() {
+        parent::__construct();
+        $this->load->library(array('ion_auth', 'session', 'form_validation', 'alcaptcha'));
         $this->load->database();
+        $this->load->helper(array('form', 'url', 'html'));
+    }
+
+    function captha_img($fiction_param) {
+        echo $this->alcaptcha->image();
+    }
+
+    function captha_reloaded($fiction_param) {
+        $this->alcaptcha->generate_code(4);
+        echo $this->alcaptcha->image();
+    }
+    public function view($page = 'home') {
 
         if (!file_exists('application/views/pages/' . $page . '.php')) {
             // Whoops, we don't have a page for that!
             show_404();
         }
 
+        $this->alcaptcha->generate_code(4);
         $data = array(
             'title' => $page,
             'logged_in' => $this->ion_auth->logged_in(),

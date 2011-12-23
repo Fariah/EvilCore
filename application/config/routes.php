@@ -38,6 +38,8 @@
 |
 */
 
+$route['captha_img/(:num)'] = 'pages/captha_img/$1';
+$route['captha_reloaded/(:num)'] = 'pages/captha_reloaded/$1';
 $route['admin/news/create'] = 'admin/news/create';
 $route['admin/save_news/(:num)'] = 'admin/news/save/$1';
 $route['admin/news/edit/(:num)'] = 'admin/news/edit/$1';

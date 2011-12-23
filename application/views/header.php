@@ -45,6 +45,13 @@
                     links : false, // show images as links
                     hoverPause: true // pause on hover
                 });
+                $('#ajax_reload').click(function(){
+                     $('#ajax_image').attr('src', "captha_reloaded/"+Math.floor( Math.random() * (255+1)));
+//                    $('#ajax_image').load("captha_img/"+Math.floor( Math.random( ) * (255+1) ), function() {
+//                        alert('Load was performed.');
+//                    });
+                });
+                // инициализация редактора должна быть в конце.
                 $('#news_textarea').redactor({ lang: 'ru' });
             });
         </script>
